@@ -12,15 +12,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Nux App"),
         ),
-        body: Center(
-            child: Container(
-                color: Colors.deepPurple,
-                height: 50,
-                width: 150,
-                child: Text(
-                  "Hello Worldfdferfefefedsfr vdf",
-                  maxLines: 2,
-                ))),
+        body: Column(
+          children: <Widget>[
+            Text("Text 1"), 
+            Text("Text 2"), 
+            Text("Text 3"), 
+          ],
+        )
       ),
     );
   }
