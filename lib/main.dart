@@ -10,15 +10,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.deepPurple,
           title: Text("Nux App"),
+        ), 
+        body: Container(
+          color: Colors.black87,
         ),
-        body: Column(
-          children: <Widget>[
-            Text("Text 1"), 
-            Text("Text 2"), 
-            Text("Text 3"), 
-          ],
-        )
       ),
     );
   }
