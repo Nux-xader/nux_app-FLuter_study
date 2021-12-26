@@ -13,16 +13,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int num = 0;
-  void btn_up() {
-    setState(() {
-      num++;
-    });
-  }
-  void btn_down() {
-    setState(() {
-      num--;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +25,25 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(num.toString(), style: TextStyle(fontSize: num.toDouble()*10),),
+              Text(
+                num.toString(),
+                style: TextStyle(fontSize: num.toDouble() * 10),
+              ),
               RaisedButton(
                 child: Text("Up"),
-                onPressed: btn_up,
-              ), 
+                onPressed: () {
+                  setState(() {
+                    num++;
+                  });
+                },
+              ),
               RaisedButton(
                 child: Text("Down"),
-                onPressed: btn_down,
+                onPressed: () {
+                  setState(() {
+                    num--;
+                  });
+                },
               )
             ],
           ),
