@@ -43,8 +43,10 @@ class _MyAppState extends State<MyApp> {
                     child: Text("Hapus data"),
                     onPressed: () {
                       setState(() {
-                        num--;
-                        list_widget.removeLast();
+                        if (list_widget.length > 0) {
+                          num--;
+                          list_widget.removeLast();
+                        }
                       });
                     },
                   )
