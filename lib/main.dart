@@ -15,7 +15,6 @@ class _MyAppState extends State<MyApp> {
   List<Widget> list_widget = [];
   int num = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,7 +32,10 @@ class _MyAppState extends State<MyApp> {
                     onPressed: () {
                       setState(() {
                         num++;
-                        list_widget.add(Text("Data ke "+num.toString(), style: TextStyle(fontSize: 35),));
+                        list_widget.add(Text(
+                          "Data ke " + num.toString(),
+                          style: TextStyle(fontSize: 35),
+                        ));
                       });
                     },
                   ),
@@ -47,11 +49,10 @@ class _MyAppState extends State<MyApp> {
                     },
                   )
                 ],
-              ), 
+              ),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: list_widget
-              )
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: list_widget)
             ],
           )),
     );
