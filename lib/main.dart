@@ -20,51 +20,106 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Nux App"),
-        ),
-        body: Column(
-          children: <Widget>[
-            Flexible(
-              flex: 1,
-              child: Row(
+          appBar: AppBar(
+            title: Text("Nux App"),
+          ),
+          body: Stack(
+            children: <Widget>[
+              Column(
                 children: <Widget>[
                   Flexible(
                       flex: 1,
-                      child: Container(
-                        margin: EdgeInsets.all(5),
-                        color: Colors.yellow,
+                      child: Row(
+                        children: <Widget>[
+                          Flexible(
+                              flex: 1,
+                              child: Container(
+                                color: Colors.white,
+                              )),
+                          Flexible(
+                              flex: 1,
+                              child: Container(
+                                color: Colors.black12,
+                              )),
+                        ],
                       )),
                   Flexible(
                       flex: 1,
-                      child: Container(
-                        margin: EdgeInsets.all(5),
-                        color: Colors.red,
-                      )),
-                  Flexible(
-                      flex: 1,
-                      child: Container(
-                        margin: EdgeInsets.all(5),
-                        color: Colors.green,
+                      child: Row(
+                        children: <Widget>[
+                          Flexible(
+                              flex: 1,
+                              child: Container(
+                                color: Colors.black12,
+                              )),
+                          Flexible(
+                              flex: 1,
+                              child: Container(
+                                color: Colors.white,
+                              )),
+                        ],
                       ))
                 ],
               ),
-            ),
-            Flexible(
-                flex: 2,
-                child: Container(
-                  margin: EdgeInsets.all(5),
-                  color: Colors.red,
-                )),
-            Flexible(
-                flex: 1,
-                child: Container(
-                  margin: EdgeInsets.all(5),
-                  color: Colors.green,
-                ))
-          ],
-        ),
-      ),
+              ListView(
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text(
+                            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet",
+                            style: TextStyle(fontSize: 30),
+                          )),
+                      Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text(
+                            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet",
+                            style: TextStyle(fontSize: 30),
+                          )),
+                      Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text(
+                            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet",
+                            style: TextStyle(fontSize: 30),
+                          )),
+                      Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text(
+                            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet",
+                            style: TextStyle(fontSize: 30),
+                          )),
+                      Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text(
+                            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet",
+                            style: TextStyle(fontSize: 30),
+                          )),
+                      Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text(
+                            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet",
+                            style: TextStyle(fontSize: 30),
+                          )),
+                      Container(
+                          margin: EdgeInsets.all(5),
+                          child: Text(
+                            "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet",
+                            style: TextStyle(fontSize: 30),
+                          ))
+                    ],
+                  )
+                ],
+              ),
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: RaisedButton(
+                    child: Text("My Button"),
+                    color: Colors.amber,
+                    onPressed: () {},
+                  ))
+            ],
+          )),
     );
   }
 }
