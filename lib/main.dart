@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,51 +14,32 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Widget> list_widget = [];
-  int num = 0;
+  Random random = Random();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: Text("Nux App"),
+        appBar: AppBar(
+          title: Text("Nux App"),
+        ),
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                
+              });
+            },
+            child: AnimatedContainer(
+              color: Color.fromARGB(255, random.nextInt(256), random.nextInt(256),
+                  random.nextInt(256)),
+              duration: Duration(seconds: 1),
+              width: 50.0 + random.nextInt(101),
+              height: 50.0 + random.nextInt(101),
+            ),
           ),
-          body: ListView(
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  RaisedButton(
-                    child: Text("Tambah data"),
-                    onPressed: () {
-                      setState(() {
-                        num++;
-                        list_widget.add(Text(
-                          "Data ke " + num.toString(),
-                          style: TextStyle(fontSize: 35),
-                        ));
-                      });
-                    },
-                  ),
-                  RaisedButton(
-                    child: Text("Hapus data"),
-                    onPressed: () {
-                      setState(() {
-                        if (list_widget.length > 0) {
-                          num--;
-                          list_widget.removeLast();
-                        }
-                      });
-                    },
-                  )
-                ],
-              ),
-              Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: list_widget)
-            ],
-          )),
+        ),
+      ),
     );
   }
 }
